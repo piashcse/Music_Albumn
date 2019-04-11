@@ -102,7 +102,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rnboilerplate"
+        applicationId "com.musicalbumn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

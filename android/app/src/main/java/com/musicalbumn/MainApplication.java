@@ -1,4 +1,4 @@
-package com.rnboilerplate;
+package com.musicalbumn;
 
 import android.app.Application;
 
