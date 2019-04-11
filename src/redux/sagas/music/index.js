@@ -1,19 +1,19 @@
-import {NETWROK_TEST, NETWROK_TEST_FAILURE, NETWROK_TEST_SUCCESS} from "../../constants/network-test";
+import {MUSIC_ALBUMN, MUSIC_ALBUMN_FAILURE, MUSIC_ALBUMN_SUCCESS} from "../../constants/music";
 import { takeEvery, call, put } from 'redux-saga/effects';
 import ApiService from '../../../networks/ApiService';
 import AxiosService from '../../../networks/AxiosService';
 
 
-function* callNetworkTestApi(action) {
+function* callMusicAlbumnApi(action) {
     try {
         const response = yield call(AxiosService.getServiceData, ApiService.TEST_API, {});
         const result = response.data;
-        yield put({ type: NETWROK_TEST_SUCCESS, result });
+        yield put({ type: MUSIC_ALBUMN_SUCCESS, result });
     } catch (error) {
-        yield put({ type: NETWROK_TEST_FAILURE });
+        yield put({ type: MUSIC_ALBUMN_FAILURE });
     }
 }
 
-export const netwrokTestSaga = [
-    takeEvery(NETWROK_TEST, callNetworkTestApi)
+export const musicAppSaga = [
+    takeEvery(MUSIC_ALBUMN, callMusicAlbumnApi)
 ];

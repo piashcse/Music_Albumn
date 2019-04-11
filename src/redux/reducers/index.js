@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import networkTestReducer from "./network-test";
+import musicReducer from "./music";
 
 
 export default combineReducers({
-    networkTestReducer,
+    musicReducer,
 });

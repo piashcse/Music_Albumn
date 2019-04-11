@@ -1,4 +1,4 @@
-import {NETWROK_TEST, NETWROK_TEST_FAILURE, NETWROK_TEST_SUCCESS} from "../../constants/network-test";
+import {MUSIC_ALBUMN, MUSIC_ALBUMN_FAILURE, MUSIC_ALBUMN_SUCCESS} from "../../constants/music";
 
 
 const initialState = {
@@ -6,21 +6,21 @@ const initialState = {
     isFetching: false,
 };
 
-export default function networkTestReducer(state = initialState, action) {
+export default function musicReducer(state = initialState, action) {
     switch (action.type) {
-        case NETWROK_TEST:
+        case MUSIC_ALBUMN:
             return {
                 ...state,
                 data: [],
                 isFetching: true
             };
-        case NETWROK_TEST_SUCCESS:
+        case MUSIC_ALBUMN_SUCCESS:
             return {
                 ...state,
                 data: action.result,
                 isFetching: false
             };
-        case NETWROK_TEST_FAILURE:
+        case MUSIC_ALBUMN_FAILURE:
             return {
                 ...state,
                 data: [],

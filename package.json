@@ -12,6 +12,7 @@
     "react": "16.8.3",
     "react-native": "0.59.4",
     "react-native-router-flux": "^4.0.6",
+    "react-native-search-filter": "^0.1.4",
     "react-redux": "^7.0.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
