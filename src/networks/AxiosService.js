@@ -2,7 +2,8 @@ import {
     BASE_URL
 } from './Url';
 import axios from 'axios';
-import { NetInfo, Alert } from 'react-native';
+import {Alert } from 'react-native';
+import NetInfo from  '@react-native-community/netinfo';
 
 
 let config = {};

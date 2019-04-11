@@ -1,3 +1,3 @@
 module.exports = {
-    TEST_API: 'users',
+    TEST_API: 'music_albums',
 };

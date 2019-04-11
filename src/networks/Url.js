@@ -1,3 +1,3 @@
 
 
-export const BASE_URL = 'http://yoyo.com/';
+export const BASE_URL = 'http://rallycoding.herokuapp.com/api/';

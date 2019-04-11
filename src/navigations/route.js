@@ -6,7 +6,7 @@ import NetworkingTest from "../screens/networking-test";
 const App = () => (
     <Router>
         <Stack key="root">
-            <Scene key="netwrokingTest" component={NetworkingTest} title="Netwroking" />
+            <Scene key="netwrokingTest" component={NetworkingTest} title="Music Album" />
             <Scene key="Home" component={Home} title="Login"/>
         </Stack>
     </Router>
