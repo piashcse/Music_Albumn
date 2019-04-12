@@ -1,17 +1,16 @@
-import {Dimensions, StyleSheet} from "react-native";
-const {height, width} = Dimensions.get('window');
+import {StyleSheet} from "react-native";
 
 export default styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        margin: 18
+        marginBottom: 15
     },
     containerTop: {
         flexDirection: 'row',
         marginBottom: 8
     },
     containerTitle: {
-        paddingLeft: 20
+        paddingLeft: 15
     },
     titleStyle: {
         fontSize: 22,
@@ -19,10 +18,9 @@ export default styles = StyleSheet.create({
     },
     thumbnailImageStyle: {
         height: 60,
-        width: 100
+        width: 90
     },
     coverImageStyle: {
         height: 200,
-        width: width - 60
     }
 });

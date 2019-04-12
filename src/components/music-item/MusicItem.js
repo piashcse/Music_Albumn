@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import styles from "./styles"
 
 export default ({title, artist, coverImageUrl, thumbnailUrl, ...props}) => {
@@ -24,7 +24,7 @@ export default ({title, artist, coverImageUrl, thumbnailUrl, ...props}) => {
                 <Image
                     style={styles.coverImageStyle}
                     source={{uri: coverImageUrl}}
-                    resizeMode={"cover"}
+                    resizeMode={"stretch"}
                 />
             </View>
 

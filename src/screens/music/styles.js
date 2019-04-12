@@ -1,28 +1,39 @@
-import {StyleSheet} from "react-native";
+import {Dimensions, StyleSheet} from "react-native";
+import {COLOR} from "../../utils/Colors";
 
+const {height, width} = Dimensions.get('window');
 export default styles = StyleSheet.create({
-    container: {
+    containerMain:{
         flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'flex-start'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    searchContainer:{
-        position:'absolute',
-        top:45,
-        backgroundColor:'white',
-        borderRadius:8
+    containerFlatlist:{
+        width: width - 50
     },
-    emailItem: {
+    searchContainer: {
+        position: 'absolute',
+        top: 65,
+        width: width - 50,
+        backgroundColor: COLOR.whiteColor,
+        borderRadius: 8
+    },
+    suggestionContainer: {
         borderBottomWidth: 0.5,
-        borderColor: 'rgba(0,0,0,0.3)',
+        borderColor: COLOR.suggestionContainerColor,
         padding: 10
     },
-    emailSubject: {
-        color: 'rgba(0,0,0,0.5)'
+    suggestionTextStyle: {
+        width: width - 60
+    },
+    containerSearchInput: {
+        marginVertical: 15,
     },
     searchInput: {
-        padding: 10,
-        borderColor: '#CCC',
-        borderWidth: 1
+        width: width - 50,
+        padding: 6,
+        borderColor: COLOR.inputTextBorderColor,
+        borderWidth: 1,
+        backgroundColor: COLOR.inputTextBackgroundColor
     }
 });

@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from "react-native";
 import {COLOR} from "../../utils/Colors"
+
 const {height, width} = Dimensions.get('window');
 
 export default styles = StyleSheet.create({
@@ -7,7 +8,7 @@ export default styles = StyleSheet.create({
         width,
         height,
         position: 'absolute',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: COLOR.loadingBackgroundColor,
         top: 0,
         left: 0,
         flex: 1,

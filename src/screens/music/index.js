@@ -6,6 +6,7 @@ import Loading from "../../components/loading/Loading";
 import MusicItem from "../../components/music-item/MusicItem";
 import SearchInput, {createFilter} from 'react-native-search-filter';
 import styles from './styles'
+import {constants} from "../../constant/constants";
 
 const KEYS_TO_FILTERS = ['title'];
 
@@ -28,35 +29,24 @@ class Music extends Component {
 
     render() {
         let {searchTerm} = this.state;
-        const filteredEmails = this.props.musicReducer.data.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
 
         return (
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <SearchInput
-                    onChangeText={(term) => {
-                        this.searchUpdated(term)
-                    }}
-                    style={styles.searchInput}
-                    placeholder={'Search'}/>
+            <View style={styles.containerMain}>
+                <View style={styles.containerSearchInput}>
+                    <SearchInput
+                        onChangeText={(term) => {
+                            this.searchUpdated(term)
+                        }}
+                        style={styles.searchInput}
+                        placeholder={constants.SEARCH}/>
+                </View>
                 <FlatList
+                    style={styles.containerFlatlist}
                     data={this.props.musicReducer.data}
                     showsVerticalScrollIndicator={false}
                     renderItem={({item}) => this.flatListItem(item)}/>
 
-                    {searchTerm.trim().length > 0 &&
-                    <ScrollView style={styles.searchContainer}>
-                        {filteredEmails.map(email => {
-                            return (
-                                <TouchableOpacity onPress={() => alert(email.title)} key={email.id}
-                                                  style={styles.emailItem}>
-                                    <View>
-                                        <Text>{email.title}</Text>
-                                        <Text style={styles.emailSubject}>{email.subject}</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            )
-                        })}
-                    </ScrollView>}
+                {searchTerm.trim().length > 0 && this.searchSuggestion()}
                 {this.props.musicReducer.isFetching && <Loading/>}
             </View>
         )
@@ -72,6 +62,25 @@ class Music extends Component {
                     coverImageUrl={item.image}
                 />
             </View>
+        )
+    }
+
+    searchSuggestion() {
+        const filteredTitle = this.props.musicReducer.data.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+        return (
+            <ScrollView style={styles.searchContainer}>
+                {filteredTitle.map(email => {
+                    return (
+                        <TouchableOpacity
+                            onPress={() => alert(email.title)} key={email.id}
+                            style={styles.suggestionContainer}>
+                            <View>
+                                <Text style={styles.suggestionTextStyle}>{email.title}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    )
+                })}
+            </ScrollView>
         )
     }
 }

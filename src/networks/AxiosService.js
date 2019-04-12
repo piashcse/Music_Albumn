@@ -4,6 +4,7 @@ import {
 import axios from 'axios';
 import {Alert } from 'react-native';
 import NetInfo from  '@react-native-community/netinfo';
+import {constants} from "../constant/constants";
 
 
 let config = {};
@@ -18,7 +19,7 @@ class AxiosService {
         count = 1;
         const connectionInfo = await NetInfo.getConnectionInfo();
         if (connectionInfo.type === 'none') {
-            Alert('LOGIN_MODULE.PLEASE_CONNECT_TO_INTERNET')
+            Alert(constants.PLEASE_CONNECT_TO_INTERNET)
             throw new Error("Please connect to internet")
         } else {
             let requestHeader;
@@ -39,7 +40,7 @@ class AxiosService {
         count = 1;
         const connectionInfo = await NetInfo.getConnectionInfo();
         if (connectionInfo.type === 'none') {
-            Alert('LOGIN_MODULE.PLEASE_CONNECT_TO_INTERNET')
+            Alert(constants.PLEASE_CONNECT_TO_INTERNET)
             throw new Error("Please connect to internet")
         } else {
             let requestHeader;
@@ -60,7 +61,7 @@ class AxiosService {
         count = 1;
         const connectionInfo = await NetInfo.getConnectionInfo();
         if (connectionInfo.type === 'none') {
-            Alert('LOGIN_MODULE.PLEASE_CONNECT_TO_INTERNET')
+            Alert(constants.PLEASE_CONNECT_TO_INTERNET)
             throw new Error("Please connect to internet")
         } else {
             let requestHeader;
@@ -81,7 +82,7 @@ class AxiosService {
         count = 1;
         const connectionInfo = await NetInfo.getConnectionInfo();
         if (connectionInfo.type === 'none') {
-            Alert('LOGIN_MODULE.PLEASE_CONNECT_TO_INTERNET')
+            Alert(constants.PLEASE_CONNECT_TO_INTERNET)
             throw new Error("Please connect to internet")
         } else {
             let requestHeader;

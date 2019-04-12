@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {View, ActivityIndicator, Text, Dimensions} from 'react-native';
+import {View, ActivityIndicator, Text} from 'react-native';
 import styles from "./styles"
 import {COLOR} from "../../utils/Colors";
-const {width, height} = Dimensions.get('window');
 
-
-export default ()=>{
+export default () => {
     return (
         <View style={styles.containerLoading}>
             <View style={styles.containerIndicator}>
